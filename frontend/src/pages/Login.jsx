@@ -11,7 +11,7 @@ function Login() {
   const login = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://user-management-authentication-api.onrender.com/api/auth/login",
         {
           email,
           password,
@@ -21,9 +21,7 @@ function Login() {
       alert(res.data.message || "Login Successful");
       navigate("/profile");
     } catch (err) {
-      alert(
-        err.response?.data?.message || "Login Failed"
-      );
+      alert(err.response?.data?.message || "Login Failed");
     }
   };
 
